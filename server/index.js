@@ -2,6 +2,12 @@ const express = require("express");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 const createBook = require("./routes/book");
+const getBookId = require("./routes/book");
+const allBook = require("./routes/book");
+const deleteBook = require("./routes/book");
+const updateBook = require("./routes/book");
+const Rate = require("./routes/book");
+const Review = require("./routes/book");
 const fileUpload = require("express-fileupload");
 require("dotenv").config();
 
@@ -34,3 +40,9 @@ mongoose
 // Create Book Route
 
 app.use("/api", createBook);
+app.use("/api", getBookId);
+app.use("/api", allBook);
+app.use("/api", deleteBook);
+app.use("/api", updateBook);
+app.use("/api", Rate);
+app.use("/api", Review);

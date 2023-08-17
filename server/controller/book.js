@@ -28,3 +28,69 @@ exports.createBook = async (req, res) => {
     console.log(error.message);
   }
 };
+
+exports.allBook = async (req, res) => {
+  try {
+    const book = await Book.find({}).sort({ createdAt: -1 });
+    res.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+exports.getBookId = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const book = await Book.findOne({ _id: id });
+    if (!book)
+      return res.status(404).json({ message: "Book is already exists" });
+    res.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+exports.updateBook = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const book = await Book.findOneAndUpdate(
+      { _id: id },
+      {
+        ...req.body,
+      }
+    );
+    res.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+exports.deleteBook = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const book = await Book.findOneAndDelete({ _id: id });
+    res.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+exports.Rate = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const book = await Book.findOneAndUpdate({ _id: id });
+    res.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+exports.Review = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const book = await Book.findOneAndUpdate({ _id: id });
+    res.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
