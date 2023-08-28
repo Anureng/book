@@ -15,6 +15,10 @@ const app = express();
 
 const port = process.env.PORT;
 
+const corsOptions = {
+  origin: "http://localhost:3000",
+};
+
 app.use(
   fileUpload({
     useTempFiles: true,
@@ -22,6 +26,8 @@ app.use(
 );
 
 app.use(express.json());
+
+app.use(cors(corsOptions));
 
 const url = process.env.MONGO_URI;
 app.listen(port, () => {

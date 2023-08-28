@@ -19,7 +19,10 @@ exports.createBook = async (req, res) => {
       name: req.body.name,
       description: req.body.description,
       image: result.secure_url,
-      number: req.body.number,
+      price: req.body.price,
+      genre: req.body.genre,
+      type: req.body.type,
+      author: req.body.author,
     });
 
     console.log(result);

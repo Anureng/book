@@ -4,7 +4,10 @@ const bookSchema = new mongoose.Schema({
   name: String,
   description: String,
   image: String,
-  rating: Number,
+  price: Number,
+  genre: String,
+  type: String,
+  author: String,
   review: [
     {
       type: Number,
