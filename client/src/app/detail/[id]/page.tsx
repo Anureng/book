@@ -3,6 +3,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const page = ({params}:any) => {
     const [idData, setIdData] = useState("")
@@ -46,9 +47,10 @@ const page = ({params}:any) => {
                 <span> Type :- {idData.type}</span>
                 <span> Price :- {idData.price}</span>
                 </div>
+                <button className='bg-gray-200 py-2 px-1 rounded-xl'>Add to cart</button>
                 </div>
-
         </div>
+        <Footer/>
     </div>
   )
 }

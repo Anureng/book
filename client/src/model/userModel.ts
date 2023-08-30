@@ -16,7 +16,7 @@ const userSchema = new Schema<UserDocument , {} , Methods>({
     email :{ type: "string", required: true , unique: true},
     name :{ type: "string", required: true},
     password :{ type: "string", required: true},
-        role :{ type: "string", enum :["admin", "user"], default: "user"}
+    role :{ type: "string", enum :["admin", "user"], default: "user"}
 })
 
 // Hash the password

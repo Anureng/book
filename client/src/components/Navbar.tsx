@@ -1,8 +1,12 @@
+"use client"
 import Link from 'next/link';
 import React from 'react'
 import { BsTwitter , BsInstagram , BsLinkedin , BsCart , BsSearch} from 'react-icons/bs';
+import AuthenticatedRoute from './AuthenticatedRoute';
+import { useCart } from '@/app/context/CartContext';
 
 const Navbar = () => {
+    const { cart } = useCart();
   return (
     <div>
 
@@ -15,6 +19,7 @@ const Navbar = () => {
             <BsInstagram/>
             <BsLinkedin/>
         </div>
+        <AuthenticatedRoute/>
     </div>
 
     <div className='flex items-center justify-evenly mt-6' >
@@ -35,8 +40,10 @@ const Navbar = () => {
         <BsSearch  className=""/>
         </div>
         <div  className="bg-red-400 text-white text-xl p-1 ">
-
+<Link href="/cart">
     <BsCart/>
+    {cart.length}
+</Link>
         </div>
     </div>
     </div>

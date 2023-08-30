@@ -1,9 +1,11 @@
 import Auther from '@/components/Auther'
 import BestProduct from '@/components/BestProduct'
 import BestSell from '@/components/BestSell'
+import CartData from '@/components/CartData'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Navbar from '@/components/Navbar'
+import ProductList from '@/components/ProductList'
 import Image from 'next/image'
 
 export default function Home() {
@@ -15,6 +17,9 @@ export default function Home() {
     <BestProduct/>
     <Auther/>
     <Footer/>
+    {/* <CartData/> */}
+    <br /><br />
+    <ProductList/>
   </div>
   )
 }

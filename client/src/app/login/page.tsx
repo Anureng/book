@@ -32,15 +32,16 @@ const page = () => {
       redirect:false
     })
 
-    if(res?.error) return console.log(res.error);
+    if(res?.error) return alert(res.error);
 
-    
+    console.log(res);
+    router.replace("/")
   }
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="email " name='email' value={email} onChange={handleChange} />
-        <input type="password " name='password' value={password} onChange={handleChange} />
+        <input type="email " placeholder='email' name='email' value={email} onChange={handleChange} />
+        <input type="password " name='password' placeholder='password' value={password} onChange={handleChange} />
         <button type='submit'>Click me</button>
       </form>
     </div>
