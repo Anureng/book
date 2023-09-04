@@ -32,8 +32,14 @@ export const CartProvider: React.FC = ({ children }) => {
     setCart([...cart, product]);
   };
 
+  const removeFromCart = (itemId: string) => {
+    const updatedCart = cart.filter(item => item.id !== itemId);
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart ,removeFromCart}}>
       {children}
     </CartContext.Provider>
   );

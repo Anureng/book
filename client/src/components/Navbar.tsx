@@ -24,13 +24,17 @@ const Navbar = () => {
 
     <div className='flex items-center justify-evenly mt-6' >
     <div className='flex space-x-3'>
-        <p>Home</p>
+        <p>
+            <Link href="/">
+            Home
+            </Link>
+            </p>
         <p>
             <Link href="/Book">
             Books
             </Link>
             </p>
-        <p>Contact</p>
+        {/* <p>Contact</p> */}
         <p>community</p>
     </div>
 

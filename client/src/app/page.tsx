@@ -4,6 +4,7 @@ import BestSell from '@/components/BestSell'
 import CartData from '@/components/CartData'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import LoginData from '@/components/LoginData'
 import Navbar from '@/components/Navbar'
 import ProductList from '@/components/ProductList'
 import Image from 'next/image'
@@ -18,8 +19,9 @@ export default function Home() {
     <Auther/>
     <Footer/>
     {/* <CartData/> */}
-    <br /><br />
+    {/* <br /><br />
     <ProductList/>
+    <LoginData/> */}
   </div>
   )
 }
